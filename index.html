@@ -6,13 +6,20 @@
     <title>WebGLExport</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json",{Module: {
+	  onRuntimeInitialized: function(){
+	  var gameContainer = document.getElementById('gameContainer');
+	  gameContainer.style.border = '10 px solid antiquewhite';
+	  gameContainer.style.borderRadius = '10px';
+	  gameContainer.style.transition = 'all .5s ease-in 0.5s';
+	  }
+	  }});
     </script>
   </head>
   <body style="background: url(Images/Background.jpg) no-repeat center
   center fixed; background-size: cover;">
-	<div style="font-size:25px;text-align:center;margin-bottom:20px;margin-top:10px;">This is my game</div>
-    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
-	<div style="font-size:15px;text-align:center;margin-bottom:10px;margin-top:20px;"><a href="mailto:me@email.com" style="color=darkblue">augustin.darre@outlook.com</a></div>
+	<div style="font-size:25px;text-align:center;margin-bottom:20px;margin-top:10px;color:antiquewhite">This is my game</div>
+    <div id="gameContainer" style="left:50%;transform:translateX(-50%);width: 960px; height: 600px; margin: auto;"></div>
+	<div style="font-size:15px;text-align:center;margin-bottom:10px;margin-top:20px;"><a href="mailto:me@email.com" style="color:blue">augustin.darre@outlook.com</a></div>
   </body>
 </html>
