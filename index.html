@@ -4,24 +4,32 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>WebGLExport</title>
-	<link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <script src="Build/UnityLoader.js"></script>
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<script src="Build/UnityLoader.js"></script>
+		<script src="JS/onInit.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json",{Module: {
-	  onRuntimeInitialized: function(){
-	  var gameContainer = document.getElementById('gameContainer');
-	  gameContainer.style.border = '10px solid antiquewhite';
-	  gameContainer.style.borderRadius = '10px';
-	  gameContainer.style.transition = 'all .5s ease-in 0.5s';
-	  }
-	  }});
+      window.gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json",{
+			Module: {
+				onRuntimeInitialized: onInit,
+			},
+			Module:{
+				onRuntimeInitialized: function(){
+				var gameContainer = document.getElementById('gameContainer');
+				gameContainer.style.border = '10px solid antiquewhite';
+				gameContainer.style.borderRadius = '10px';
+				gameContainer.style.transition = 'all .5s ease-in 0.5s';
+				}
+			}});
     </script>
   </head>
-  <body>
-	<div id="title">Search images on Pixabay</div>
-    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto;"></div>
-	<div id="email-outter">
-		<a id= "email-inner" href="mailto:me@email.com">augustin.darre@outlook.com</a>
-	</div>
-  </body>
+ 	 	<body>
+			<div id="title">Search images on Pixabay</div>
+			<div id="gameContainer" style="width: 960px; height: 600px; margin: auto;"></div>
+			<div class="footer" style="text-align:center;">
+				<img id="likeImage" src="Images/Like.png" style="margin-bottom:10px;margin-top:10px;cursor:pointer;">
+			</div>
+			<div id="email-outter">
+				<a id= "email-inner" href="mailto:me@email.com">augustin.darre@outlook.com</a>
+			</div>
+  	</body>
 </html>
